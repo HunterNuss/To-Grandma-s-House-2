@@ -19,7 +19,7 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     
     override func sceneDidLoad() {
-
+        print("No")
         print("Hello Noah")
         self.lastUpdateTime = 0
         
