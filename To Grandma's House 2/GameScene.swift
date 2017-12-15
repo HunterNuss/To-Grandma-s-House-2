@@ -10,9 +10,10 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
+    var littleRed = SKSpriteNode()
     override func didMove(to view: SKView) {
-        
+        littleRed = childNode(withName: "littleRed") as! SKSpriteNode
+      
         
     }
 }
