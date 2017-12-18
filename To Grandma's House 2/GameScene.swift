@@ -29,4 +29,14 @@ class GameScene: SKScene {
             }
         }
     }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if isFingerOnRed == true {
+            let touch = touches.first
+            let touchLocation = touch!.location(in: self)
+            littleRed.position = CGPoint(x: touchLocation.x, y: littleRed.position.y)
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isFingerOnRed = false
+    }
 }
