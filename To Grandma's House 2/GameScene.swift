@@ -8,11 +8,25 @@
 
 import SpriteKit
 import GameplayKit
+struct PhysicsCategory {
+       static let littlered: UInt32 = 0
+}
 
 class GameScene: SKScene {
     var littleRed = SKSpriteNode()
     override func didMove(to view: SKView) {
          littleRed = childNode(withName: "littleRed") as! SKSpriteNode
-    
+         littleRed.physicsBody?.categoryBitMask = PhysicsCategory.littlered
+    }
+    var isFingerOnRed = false
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let touchLocation = touch!.location(in: self)
+        if let body = physicsWorld.body(at: touchLocation) {
+            if body.node?.name == "littleRed" {
+                print("I got Red")
+                isFingerOnRed = true
+            }
+        }
     }
 }
