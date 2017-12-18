@@ -19,6 +19,7 @@ class FirstScene: SKScene {
         let nameLabel = SKLabelNode(text: "To Grandma's House")
         nameLabel.fontSize = 25
         nameLabel.position = CGPoint(x: frame.width / 2, y: 50)
+        nameLabel.fontColor = UIColor.black
     }
     
     
