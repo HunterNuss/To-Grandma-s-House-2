@@ -12,6 +12,9 @@ import SpriteKit
 class FirstScene: SKScene {
 
     var nameLabel = SKLabelNode()
+    var button = UIButton()
+    var backgroundImage = UIImageView()
+    
     
     override func didMove(to view: SKView) {
         welcomeLabel()
@@ -26,5 +29,17 @@ class FirstScene: SKScene {
         addChild(nameLabel)
     }
     
+    func transitionButton() {
+        button = UIButton()
+        button.setTitle("Play", for: .normal)
+    }
+    
+    
+    func background() {
+        backgroundImage.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        backgroundImage.image = #imageLiteral(resourceName: "Little Red Background")
+        view?.addSubview(backgroundImage)
+            
+    }
     
 }
