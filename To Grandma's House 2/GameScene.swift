@@ -15,7 +15,7 @@ struct PhysicsCategory {
 class GameScene: SKScene {
     
     var littleRed = SKSpriteNode()
-    var isFingerOnRed = false
+    var isFingerOnRed = true
     
     override func sceneDidLoad() {
         littleRed = childNode(withName: "littleRed") as! SKSpriteNode
@@ -23,9 +23,12 @@ class GameScene: SKScene {
         print("Works")
     }
     
-    
+    func touchR() {
+        isFingerOnRed = true
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchR()
         self.isUserInteractionEnabled = true
         let touch = touches.first
         let touchLocation = touch!.location(in: self)
@@ -48,6 +51,7 @@ class GameScene: SKScene {
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isFingerOnRed = false
+        touchR()
     }
 }
 
