@@ -11,15 +11,19 @@ import SpriteKit
 
 class FirstScene: SKScene {
 
+    var nameLabel = SKLabelNode()
+    
     override func didMove(to view: SKView) {
-        
+        welcomeLabel()
     }
     
     func welcomeLabel() {
-        let nameLabel = SKLabelNode(text: "To Grandma's House")
-        nameLabel.fontSize = 25
+        nameLabel = SKLabelNode(fontNamed: "Arial")
+        nameLabel.text = "To Grandma's House"
+        nameLabel.fontSize = 50
+        nameLabel.fontColor = UIColor.red
         nameLabel.position = CGPoint(x: frame.width / 2, y: 50)
-        nameLabel.fontColor = UIColor.black
+        addChild(nameLabel)
     }
     
     
