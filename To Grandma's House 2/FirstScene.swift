@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import GameplayKit
 
 class FirstScene: SKScene {
 
@@ -17,7 +18,9 @@ class FirstScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        background()
         welcomeLabel()
+        transitionButton()
     }
     
     func welcomeLabel() {
@@ -32,6 +35,14 @@ class FirstScene: SKScene {
     func transitionButton() {
         button = UIButton()
         button.setTitle("Play", for: .normal)
+        
+        let start = GameScene(size: self.size)
+       // let start = GameScene(fileNamed: "GameScene")
+        let reveal = SKTransition.flipVertical(withDuration: 1)
+        view?.presentScene(start, transition: reveal)
+        
+        //                scene.scaleMode = .aspectFill
+
     }
     
     

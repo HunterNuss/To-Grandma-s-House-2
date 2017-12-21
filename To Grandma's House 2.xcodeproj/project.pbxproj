@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ED194A51FEC0FDA00FE9ED9 /* FirstScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2ED194A41FEC0FDA00FE9ED9 /* FirstScene.sks */; };
 		2EE208501FE2CC1000E459D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2084F1FE2CC1000E459D0 /* AppDelegate.swift */; };
 		2EE208521FE2CC1100E459D0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2EE208511FE2CC1100E459D0 /* GameScene.sks */; };
 		2EE208541FE2CC1100E459D0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2EE208531FE2CC1100E459D0 /* Actions.sks */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ED194A41FEC0FDA00FE9ED9 /* FirstScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstScene.sks; sourceTree = "<group>"; };
 		2EE2084C1FE2CC1000E459D0 /* To Grandma's House 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Grandma's House 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE2084F1FE2CC1000E459D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EE208511FE2CC1100E459D0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				2EE2084F1FE2CC1000E459D0 /* AppDelegate.swift */,
 				2EE208511FE2CC1100E459D0 /* GameScene.sks */,
+				2ED194A41FEC0FDA00FE9ED9 /* FirstScene.sks */,
 				2EE208531FE2CC1100E459D0 /* Actions.sks */,
 				2EE208551FE2CC1100E459D0 /* GameScene.swift */,
 				F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */,
@@ -249,6 +252,7 @@
 				2EE2085D1FE2CC1100E459D0 /* Assets.xcassets in Resources */,
 				2EE208601FE2CC1100E459D0 /* LaunchScreen.storyboard in Resources */,
 				2EE208541FE2CC1100E459D0 /* Actions.sks in Resources */,
+				2ED194A51FEC0FDA00FE9ED9 /* FirstScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

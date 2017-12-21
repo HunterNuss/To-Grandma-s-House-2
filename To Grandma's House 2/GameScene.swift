@@ -18,8 +18,8 @@ class GameScene: SKScene {
     var isFingerOnRed = true
     
     override func sceneDidLoad() {
-        littleRed = childNode(withName: "littleRed") as! SKSpriteNode
-        littleRed.physicsBody?.categoryBitMask = PhysicsCategory.littleRed
+        //littleRed = childNode(withName: "littleRed") as! SKSpriteNode
+        //littleRed.physicsBody?.categoryBitMask = PhysicsCategory.littleRed
     }
     
     func touchRed() {
