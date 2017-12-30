@@ -15,12 +15,7 @@ class FirstScene: SKScene {
 let start = SKLabelNode(fontNamed: "Arial")
     
     override func didMove(to view: SKView) {
-        start.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
-        start.numberOfLines = 2
-        start.text = "Game Over\nClick Anywhere To Play Again"
-        start.fontSize = 40
-        start.fontColor = UIColor.white
-        addChild(start)
+
     }
     
     
@@ -29,7 +24,7 @@ let start = SKLabelNode(fontNamed: "Arial")
         let gameScene = GameScene(fileNamed: "GameScene")
         gameScene?.scaleMode = .aspectFill
         gameScene?.size = self.size
-        let reveal = SKTransition.doorsCloseHorizontal(withDuration: 1)
+        let reveal = SKTransition.fade(with: UIColor.cyan, duration: 1)
         view?.presentScene(gameScene!, transition: reveal)
         
         

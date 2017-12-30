@@ -18,6 +18,9 @@
 		2EE208601FE2CC1100E459D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EE2085E1FE2CC1100E459D0 /* LaunchScreen.storyboard */; };
 		2EE2086B1FE2CC1100E459D0 /* To_Grandma_s_House_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2086A1FE2CC1100E459D0 /* To_Grandma_s_House_2Tests.swift */; };
 		2EE208761FE2CC1100E459D0 /* To_Grandma_s_House_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE208751FE2CC1100E459D0 /* To_Grandma_s_House_2UITests.swift */; };
+		E961FF741FF730CA00AEA1BC /* WinningScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E961FF731FF730CA00AEA1BC /* WinningScene.sks */; };
+		E961FF7C1FF731B600AEA1BC /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E961FF7B1FF731B600AEA1BC /* LosingScene.swift */; };
+		E961FF7E1FF733F800AEA1BC /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E961FF7D1FF733F800AEA1BC /* WinningScene.swift */; };
 		F9492A2F1FE4208E00BA8A7E /* FirstScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		2EE208711FE2CC1100E459D0 /* To Grandma's House 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To Grandma's House 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE208751FE2CC1100E459D0 /* To_Grandma_s_House_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Grandma_s_House_2UITests.swift; sourceTree = "<group>"; };
 		2EE208771FE2CC1100E459D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E961FF731FF730CA00AEA1BC /* WinningScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinningScene.sks; sourceTree = "<group>"; };
+		E961FF7B1FF731B600AEA1BC /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
+		E961FF7D1FF733F800AEA1BC /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
 		F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,12 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				2EE2084F1FE2CC1000E459D0 /* AppDelegate.swift */,
-				2EE208511FE2CC1100E459D0 /* GameScene.sks */,
-				2ED194A41FEC0FDA00FE9ED9 /* FirstScene.sks */,
-				2EE208531FE2CC1100E459D0 /* Actions.sks */,
-				2EE208551FE2CC1100E459D0 /* GameScene.swift */,
-				F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */,
+				E961FF791FF7315300AEA1BC /* Sks */,
+				E961FF7A1FF7317E00AEA1BC /* Swift */,
 				2EE208571FE2CC1100E459D0 /* GameViewController.swift */,
+				2EE208531FE2CC1100E459D0 /* Actions.sks */,
 				2EE208591FE2CC1100E459D0 /* Main.storyboard */,
 				2EE2085C1FE2CC1100E459D0 /* Assets.xcassets */,
 				2EE2085E1FE2CC1100E459D0 /* LaunchScreen.storyboard */,
@@ -138,6 +142,27 @@
 				2EE208771FE2CC1100E459D0 /* Info.plist */,
 			);
 			path = "To Grandma's House 2UITests";
+			sourceTree = "<group>";
+		};
+		E961FF791FF7315300AEA1BC /* Sks */ = {
+			isa = PBXGroup;
+			children = (
+				2ED194A41FEC0FDA00FE9ED9 /* FirstScene.sks */,
+				2EE208511FE2CC1100E459D0 /* GameScene.sks */,
+				E961FF731FF730CA00AEA1BC /* WinningScene.sks */,
+			);
+			path = Sks;
+			sourceTree = "<group>";
+		};
+		E961FF7A1FF7317E00AEA1BC /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */,
+				2EE208551FE2CC1100E459D0 /* GameScene.swift */,
+				E961FF7D1FF733F800AEA1BC /* WinningScene.swift */,
+				E961FF7B1FF731B600AEA1BC /* LosingScene.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +277,7 @@
 				2EE2085D1FE2CC1100E459D0 /* Assets.xcassets in Resources */,
 				2EE208601FE2CC1100E459D0 /* LaunchScreen.storyboard in Resources */,
 				2EE208541FE2CC1100E459D0 /* Actions.sks in Resources */,
+				E961FF741FF730CA00AEA1BC /* WinningScene.sks in Resources */,
 				2ED194A51FEC0FDA00FE9ED9 /* FirstScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +306,9 @@
 				2EE208561FE2CC1100E459D0 /* GameScene.swift in Sources */,
 				F9492A2F1FE4208E00BA8A7E /* FirstScene.swift in Sources */,
 				2EE208581FE2CC1100E459D0 /* GameViewController.swift in Sources */,
+				E961FF7C1FF731B600AEA1BC /* LosingScene.swift in Sources */,
 				2EE208501FE2CC1000E459D0 /* AppDelegate.swift in Sources */,
+				E961FF7E1FF733F800AEA1BC /* WinningScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
