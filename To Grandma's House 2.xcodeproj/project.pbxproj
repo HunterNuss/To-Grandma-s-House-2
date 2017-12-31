@@ -21,6 +21,7 @@
 		E961FF741FF730CA00AEA1BC /* WinningScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E961FF731FF730CA00AEA1BC /* WinningScene.sks */; };
 		E961FF7C1FF731B600AEA1BC /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E961FF7B1FF731B600AEA1BC /* LosingScene.swift */; };
 		E961FF7E1FF733F800AEA1BC /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E961FF7D1FF733F800AEA1BC /* WinningScene.swift */; };
+		E9BEACCA1FF89E8300E3C523 /* LosingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E9BEACC91FF89E8300E3C523 /* LosingScene.sks */; };
 		F9492A2F1FE4208E00BA8A7E /* FirstScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		E961FF731FF730CA00AEA1BC /* WinningScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinningScene.sks; sourceTree = "<group>"; };
 		E961FF7B1FF731B600AEA1BC /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
 		E961FF7D1FF733F800AEA1BC /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
+		E9BEACC91FF89E8300E3C523 /* LosingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LosingScene.sks; sourceTree = "<group>"; };
 		F9492A2E1FE4208E00BA8A7E /* FirstScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				2ED194A41FEC0FDA00FE9ED9 /* FirstScene.sks */,
 				2EE208511FE2CC1100E459D0 /* GameScene.sks */,
 				E961FF731FF730CA00AEA1BC /* WinningScene.sks */,
+				E9BEACC91FF89E8300E3C523 /* LosingScene.sks */,
 			);
 			path = Sks;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9BEACCA1FF89E8300E3C523 /* LosingScene.sks in Resources */,
 				2EE2085B1FE2CC1100E459D0 /* Main.storyboard in Resources */,
 				2EE208521FE2CC1100E459D0 /* GameScene.sks in Resources */,
 				2EE2085D1FE2CC1100E459D0 /* Assets.xcassets in Resources */,

@@ -11,8 +11,6 @@ import SpriteKit
 import GameplayKit
 
 class FirstScene: SKScene {
-
-let start = SKLabelNode(fontNamed: "Arial")
     
     override func didMove(to view: SKView) {
 

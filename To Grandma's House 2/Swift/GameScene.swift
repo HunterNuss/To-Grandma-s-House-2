@@ -9,8 +9,8 @@
 import SpriteKit
 import GameplayKit
 struct PhysicsCategory {
-       static let littleRed: UInt32 = 0
-       static let cookie: UInt32 = 0b1
+       static let physicsLittleRed: UInt32 = 0
+       static let physicsCookie: UInt32 = 0b1
 }
 
 class GameScene: SKScene {
@@ -20,20 +20,31 @@ class GameScene: SKScene {
     
     var isFingerOnRed = true
     let screenSize = UIScreen.main.bounds
-    
-    var seconds = 30
+
+    var seconds = 15
     var timer = Timer()
+    
+    var cookieArray = [SKSpriteNode]()
     
     override func sceneDidLoad() {
         littleRed = childNode(withName: "littleRed") as! SKSpriteNode
-        littleRed.physicsBody?.categoryBitMask = PhysicsCategory.littleRed
-        
-        cookie.physicsBody?.categoryBitMask = PhysicsCategory.cookie
-        
+        littleRed.physicsBody?.categoryBitMask = PhysicsCategory.physicsLittleRed
+        cookie.physicsBody?.categoryBitMask = PhysicsCategory.physicsCookie
+                
         cookieTimer()
     }
     
-    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if (contact.bodyA.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyB.categoryBitMask == PhysicsCategory.physicsCookie) || (contact.bodyB.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyA.categoryBitMask == PhysicsCategory.physicsCookie) {
+                print("Lose")
+            
+            if contact.bodyB.node == littleRed || contact.bodyA.node == cookie {
+                let gameOverScene = LosingScene(size: self.size)
+                let reveal = SKTransition.crossFade(withDuration: 1)
+                view?.presentScene(gameOverScene, transition: reveal)
+            }
+        }
+    }
     
     
     
@@ -70,108 +81,50 @@ class GameScene: SKScene {
     
     
     
-    
+
     func createCookies() {
         var randx = CGFloat(arc4random_uniform(UInt32(screenSize.width)))
         
         cookie = SKSpriteNode(imageNamed: "Cookie")
         cookie.size = CGSize(width: 30, height: 30)
         cookie.position = CGPoint(x: randx, y: 400)
-        
+        cookie.name = "cookie"
+        addChild(cookie)
+        cookieArray.append(cookie)
+
         cookie.physicsBody = SKPhysicsBody(rectangleOf: cookie.frame.size)
         cookie.physicsBody?.affectedByGravity = true
         cookie.physicsBody?.allowsRotation = false
         cookie.physicsBody?.friction = 0
         cookie.physicsBody?.restitution = 1
         cookie.physicsBody?.isDynamic = true
-        
-        cookie.name = "cookie"
-        addChild(cookie)
-        
+
     }
-    
-    
-    
-    
-    
-    @objc func fallingCookies() {
-        var randx = CGFloat(arc4random_uniform(UInt32(screenSize.width)))
+
+
+    @objc func cookieTimerCalled() {
+        createCookies()
 
         if cookie.position.y == -80 {
-            createCookies()
-        } else {
+            removeChildren(in: [cookie])
             createCookies()
         }
-    
-        
+
         
         if seconds == 0 {
-            let gameScene = GameScene(fileNamed: "WinningScene")
-            gameScene?.scaleMode = .aspectFill
-            gameScene?.size = self.size
-            let reveal = SKTransition.fade(with: UIColor.cyan, duration: 1)
-            view?.presentScene(gameScene!, transition: reveal)
+            timer.invalidate()
+            let gameOverScene = WinningScene(size: self.size)
+            let reveal = SKTransition.crossFade(withDuration: 1)
+            view?.presentScene(gameOverScene, transition: reveal)
         } else {
             seconds -= 1
         }
+
     }
-    
-
-
-
 
     func cookieTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameScene.fallingCookies)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameScene.cookieTimerCalled)), userInfo: nil, repeats: true)
     }
 
-
-
-
-
-//func createBall(position : SCNVector3){
-//
-//    var ballShape = SCNSphere(radius: 0.005)
-//    var ballNode = SCNNode(geometry: ballShape)
-//
-//    ballNode.position = position
-//    sceneView.scene.rootNode.addChildNode(ballNode)
-//
-//    ballNode.geometry = ballNode.geometry!.copy() as? SCNGeometry
-//    ballNode.geometry?.firstMaterial = ballNode.geometry?.firstMaterial!.copy() as? SCNMaterial
-//
-//    ballNode.geometry?.firstMaterial?.diffuse.contents = UIColor.randomColor()
-//}
-
-
-
-//@objc func ballTimerCalled() {
-//    var screenWidth = CGFloat(arc4random_uniform(UInt32(screenSize.width)))
-//    var screenHeight = CGFloat(arc4random_uniform(UInt32(screenSize.height)))
-//
-//    let point = CGPoint(x: screenWidth, y: screenHeight)
-//    let result = sceneView.hitTest(point, types: [ARHitTestResult.ResultType.featurePoint])
-//    guard let hitResult = result.last else {return}
-//    let hitTransform = SCNMatrix4(hitResult.worldTransform)
-//    let hitVector = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
-//    createBall(position: hitVector)
-//
-//    if seconds == 0 {
-//        performSegue(withIdentifier: "segue2", sender: self)
-//        timer.invalidate()
-//    }else{
-//        seconds -= 1
-//    }
-//
-//
-//}
-
-
-
-//func ballRunTimer() {
-//    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewController.ballTimerCalled)), userInfo: nil, repeats: true)
-//
-//}
-
-
-
 }
+

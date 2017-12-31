@@ -10,15 +10,32 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class LosingScene: SKScene {
+class LosingScene: SKScene, SKPhysicsContactDelegate {
     
-    let start = SKLabelNode(fontNamed: "Arial")
-    
+    var losingLabel = SKLabelNode()
+    var playAgainLabel = SKLabelNode()
+
     override func didMove(to view: SKView) {
-        
+        createLabels()
     }
     
-    
+    func createLabels() {
+        losingLabel = SKLabelNode(fontNamed: "Arial")
+        losingLabel.text = "You Lose"
+        losingLabel.fontSize = 25
+        losingLabel.position = CGPoint(x: frame.width * 0.5, y: frame.height * 0.7)
+        losingLabel.fontColor = UIColor.white
+        addChild(losingLabel)
+        
+        playAgainLabel = SKLabelNode(fontNamed: "Arial")
+        playAgainLabel.text = "Tap Anywhere To Play Again"
+        playAgainLabel.fontSize = 25
+        playAgainLabel.position = CGPoint(x: frame.width * 0.5, y: frame.height * 0.3)
+        playAgainLabel.fontColor = UIColor.white
+        addChild(playAgainLabel)
+        
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let gameScene = GameScene(fileNamed: "FirstScene")
