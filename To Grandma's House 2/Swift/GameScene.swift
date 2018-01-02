@@ -37,12 +37,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
-    
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyB.categoryBitMask == PhysicsCategory.physicsCookie) || (contact.bodyB.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyA.categoryBitMask == PhysicsCategory.physicsCookie) {
                 print("Lose")
-            
+
 //            if contact.bodyB.node == littleRed || contact.bodyA.node == cookie {
 //                let gameOverScene = LosingScene(size: self.size)
 //                let reveal = SKTransition.crossFade(withDuration: 1)
@@ -54,13 +52,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
-    func touchRed() {
-        isFingerOnRed = true
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchRed()
+        isFingerOnRed = true
         self.isUserInteractionEnabled = true
         let touch = touches.first
         let touchLocation = touch!.location(in: self)
