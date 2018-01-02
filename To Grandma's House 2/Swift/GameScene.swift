@@ -8,43 +8,50 @@
 
 import SpriteKit
 import GameplayKit
+
 struct PhysicsCategory {
        static let physicsLittleRed: UInt32 = 0
        static let physicsCookie: UInt32 = 0b1
 }
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var littleRed = SKSpriteNode()
     var cookie = SKSpriteNode()
     
     var isFingerOnRed = true
-    let screenSize = UIScreen.main.bounds
 
     var seconds = 15
     var timer = Timer()
-    
-    var cookieArray = [SKSpriteNode]()
     
     override func sceneDidLoad() {
         littleRed = childNode(withName: "littleRed") as! SKSpriteNode
         littleRed.physicsBody?.categoryBitMask = PhysicsCategory.physicsLittleRed
         cookie.physicsBody?.categoryBitMask = PhysicsCategory.physicsCookie
-                
+
         cookieTimer()
+        
+        cookie.physicsBody?.isDynamic = true
+        physicsWorld.contactDelegate = self
     }
+    
+    
+    
+    
     
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyB.categoryBitMask == PhysicsCategory.physicsCookie) || (contact.bodyB.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyA.categoryBitMask == PhysicsCategory.physicsCookie) {
                 print("Lose")
             
-            if contact.bodyB.node == littleRed || contact.bodyA.node == cookie {
-                let gameOverScene = LosingScene(size: self.size)
-                let reveal = SKTransition.crossFade(withDuration: 1)
-                view?.presentScene(gameOverScene, transition: reveal)
-            }
+//            if contact.bodyB.node == littleRed || contact.bodyA.node == cookie {
+//                let gameOverScene = LosingScene(size: self.size)
+//                let reveal = SKTransition.crossFade(withDuration: 1)
+//                view?.presentScene(gameOverScene, transition: reveal)
+//            }
         }
     }
+    
+    
     
     
     
@@ -83,6 +90,7 @@ class GameScene: SKScene {
     
 
     func createCookies() {
+        let screenSize = UIScreen.main.bounds
         var randx = CGFloat(arc4random_uniform(UInt32(screenSize.width)))
         
         cookie = SKSpriteNode(imageNamed: "Cookie")
@@ -90,7 +98,6 @@ class GameScene: SKScene {
         cookie.position = CGPoint(x: randx, y: 400)
         cookie.name = "cookie"
         addChild(cookie)
-        cookieArray.append(cookie)
 
         cookie.physicsBody = SKPhysicsBody(rectangleOf: cookie.frame.size)
         cookie.physicsBody?.affectedByGravity = true
@@ -98,7 +105,6 @@ class GameScene: SKScene {
         cookie.physicsBody?.friction = 0
         cookie.physicsBody?.restitution = 1
         cookie.physicsBody?.isDynamic = true
-
     }
 
 

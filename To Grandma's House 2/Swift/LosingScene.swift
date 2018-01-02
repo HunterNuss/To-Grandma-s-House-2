@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class LosingScene: SKScene, SKPhysicsContactDelegate {
+class LosingScene: SKScene {
     
     var losingLabel = SKLabelNode()
     var playAgainLabel = SKLabelNode()
