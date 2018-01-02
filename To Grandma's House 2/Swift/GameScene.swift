@@ -10,8 +10,8 @@ import SpriteKit
 import GameplayKit
 
 struct PhysicsCategory {
-       static let physicsLittleRed: UInt32 = 0
-       static let physicsCookie: UInt32 = 0b1
+       static let physicsLittleRed: UInt32 = 1
+       static let physicsCookie: UInt32 = 0b10
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -32,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cookieTimer()
         
         cookie.physicsBody?.isDynamic = true
+        littleRed.physicsBody?.contactTestBitMask = PhysicsCategory.physicsCookie
         physicsWorld.contactDelegate = self
     }
     
@@ -39,13 +40,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyB.categoryBitMask == PhysicsCategory.physicsCookie) || (contact.bodyB.categoryBitMask == PhysicsCategory.physicsLittleRed && contact.bodyA.categoryBitMask == PhysicsCategory.physicsCookie) {
-                print("Lose")
-
-//            if contact.bodyB.node == littleRed || contact.bodyA.node == cookie {
-//                let gameOverScene = LosingScene(size: self.size)
-//                let reveal = SKTransition.crossFade(withDuration: 1)
-//                view?.presentScene(gameOverScene, transition: reveal)
-//            }
+            
+            let gameOverScene = LosingScene(size: self.size)
+            let reveal = SKTransition.crossFade(withDuration: 1)
+            view?.presentScene(gameOverScene, transition: reveal)
         }
     }
     
@@ -98,6 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cookie.physicsBody?.friction = 0
         cookie.physicsBody?.restitution = 1
         cookie.physicsBody?.isDynamic = true
+        cookie.physicsBody?.categoryBitMask = PhysicsCategory.physicsCookie
     }
 
 
@@ -122,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func cookieTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(GameScene.cookieTimerCalled)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: (#selector(GameScene.cookieTimerCalled)), userInfo: nil, repeats: true)
     }
 
 }

@@ -18,6 +18,7 @@
 		2EE208601FE2CC1100E459D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EE2085E1FE2CC1100E459D0 /* LaunchScreen.storyboard */; };
 		2EE2086B1FE2CC1100E459D0 /* To_Grandma_s_House_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2086A1FE2CC1100E459D0 /* To_Grandma_s_House_2Tests.swift */; };
 		2EE208761FE2CC1100E459D0 /* To_Grandma_s_House_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE208751FE2CC1100E459D0 /* To_Grandma_s_House_2UITests.swift */; };
+		2EF749331FFBD65600495BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF749311FFBD65600495BAA /* Assets.xcassets */; };
 		E961FF741FF730CA00AEA1BC /* WinningScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E961FF731FF730CA00AEA1BC /* WinningScene.sks */; };
 		E961FF7C1FF731B600AEA1BC /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E961FF7B1FF731B600AEA1BC /* LosingScene.swift */; };
 		E961FF7E1FF733F800AEA1BC /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E961FF7D1FF733F800AEA1BC /* WinningScene.swift */; };
@@ -60,6 +61,7 @@
 		2EE208711FE2CC1100E459D0 /* To Grandma's House 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To Grandma's House 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE208751FE2CC1100E459D0 /* To_Grandma_s_House_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Grandma_s_House_2UITests.swift; sourceTree = "<group>"; };
 		2EE208771FE2CC1100E459D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EF749311FFBD65600495BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E961FF731FF730CA00AEA1BC /* WinningScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinningScene.sks; sourceTree = "<group>"; };
 		E961FF7B1FF731B600AEA1BC /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
 		E961FF7D1FF733F800AEA1BC /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		2EE208431FE2CC1000E459D0 = {
 			isa = PBXGroup;
 			children = (
+				2EF749311FFBD65600495BAA /* Assets.xcassets */,
 				2EE2084E1FE2CC1000E459D0 /* To Grandma's House 2 */,
 				2EE208691FE2CC1100E459D0 /* To Grandma's House 2Tests */,
 				2EE208741FE2CC1100E459D0 /* To Grandma's House 2UITests */,
@@ -279,6 +282,7 @@
 				2EE2085B1FE2CC1100E459D0 /* Main.storyboard in Resources */,
 				2EE208521FE2CC1100E459D0 /* GameScene.sks in Resources */,
 				2EE2085D1FE2CC1100E459D0 /* Assets.xcassets in Resources */,
+				2EF749331FFBD65600495BAA /* Assets.xcassets in Resources */,
 				2EE208601FE2CC1100E459D0 /* LaunchScreen.storyboard in Resources */,
 				2EE208541FE2CC1100E459D0 /* Actions.sks in Resources */,
 				E961FF741FF730CA00AEA1BC /* WinningScene.sks in Resources */,
