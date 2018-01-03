@@ -121,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func cookieTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: (#selector(GameScene.cookieTimerCalled)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: (#selector(GameScene.cookieTimerCalled)), userInfo: nil, repeats: true)
     }
 
 }
